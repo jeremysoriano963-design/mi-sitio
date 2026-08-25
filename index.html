@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia del Boxeo | Mi Sitio</title>
+    <title>El Rincón del Boxeo</title>
     <style>
         :root {
-            --primary: #8b0000;
-            --secondary: #1a1a1a;
-            --accent: #d4af37;
             --bg: #121212;
-            --card-bg: #1e1e1e;
-            --text: #f5f5f5;
+            --card-bg: #1a1a1a;
+            --accent: #ff3b3b;
+            --text: #ffffff;
+            --text-dim: #b0b0b0;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,127 +18,173 @@
             padding: 0;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
         }
         header {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: white;
             text-align: center;
-            padding: 3rem 1rem;
-            border-bottom: 4px solid var(--accent);
+            padding: 2rem 1rem 1rem;
+            background: linear-gradient(180deg, #1f0505 0%, var(--bg) 100%);
+            border-bottom: 2px solid var(--accent);
         }
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            color: var(--accent);
+            font-size: 2rem;
+            margin: 0.5rem 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
-        header p {
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
-            color: #ddd;
+        /* Menú de pestañas horizontal */
+        .nav-tabs {
+            display: flex;
+            overflow-x: auto;
+            background: #181818;
+            padding: 10px;
+            gap: 10px;
+            border-bottom: 2px solid var(--accent);
+            white-space: nowrap;
+        }
+        .nav-tabs button {
+            background: #2a2a2a;
+            color: var(--text-dim);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .nav-tabs button.active {
+            background: var(--accent);
+            color: white;
         }
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
+            max-width: 800px;
+            margin: 1.5rem auto;
             padding: 0 1rem;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
         }
         .card {
             background-color: var(--card-bg);
             border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            border-left: 5px solid var(--accent);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
         h2 {
             color: var(--accent);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
+            font-size: 1.4rem;
             margin-top: 0;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+        p {
+            line-height: 1.6;
+            color: var(--text-dim);
         }
-        .gallery-item {
-            background: #2a2a2a;
+        .img-container {
+            width: 100%;
+            margin: 1rem 0;
             border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            text-align: center;
-            padding-bottom: 1rem;
         }
-        .gallery-item img {
+        .img-container img {
             width: 100%;
-            height: 180px;
+            height: 220px;
             object-fit: cover;
-        }
-        .gallery-item h3 {
-            margin: 1rem 0 0.5rem;
-            color: var(--text);
-            font-size: 1.1rem;
-        }
-        .gallery-item p {
-            font-size: 0.9rem;
-            color: #bbb;
-            padding: 0 1rem;
+            border-radius: 6px;
         }
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: var(--secondary);
-            color: #888;
-            border-top: 1px solid #333;
-            margin-top: 4rem;
+            color: #666;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Boxeo: Historia y Leyendas</h1>
-        <p>Un recorrido por el deporte de los puños</p>
+        <span style="font-size: 2rem;">🥊</span>
+        <h1>El Rincón del Boxeo</h1>
     </header>
 
+    <!-- Menú de Pestañas -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(0)">1. Orígenes</button>
+        <button class="tab-btn" onclick="switchTab(1)">2. Era Dorada</button>
+        <button class="tab-btn" onclick="switchTab(2)">3. Leyendas</button>
+        <button class="tab-btn" onclick="switchTab(3)">4. Reglas</button>
+    </div>
+
     <div class="container">
-        <div class="card">
-            <h2>Orígenes del Boxeo</h2>
-            <p>El boxeo tiene sus raíces en la antigüedad, encontrándose registros de combates de puños en Sumeria, el Antiguo Egipto y la antigua Grecia, donde fue incorporado a los Juegos Olímpicos Antiguos en el año 688 a. C. A lo largo de los siglos, el deporte ha evolucionado desde combates rudimentarios y sin protección hasta convertirse en una disciplina profesional altamente reglamentada.</p>
+        <!-- PÁGINA 1: Orígenes -->
+        <div class="tab-content active">
+            <div class="card">
+                <h2>Página 1: Los Orígenes Ancestrales del Boxeo</h2>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Orígenes del boxeo">
+                </div>
+                <p>El combate con los puños tiene registros que datan de las civilizaciones antiguas de Sumeria y el Antiguo Egipto. En la antigua Grecia, el pugilato fue formalmente introducido en los Juegos Olímpicos en el año 688 a. C., donde los atletas utilizaban correas de cuero blando en las manos para protegerse.</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>La Evolución a las Reglas Modernas</h2>
-            <p>En el siglo XIX, el deporte experimentó una transformación radical con la introducción de las <strong>Reglas de Queensberry</strong> en 1867. Estas normas establecieron el uso obligatorio de guantes, la limitación de los asaltos a 3 minutos y la prohibición de las llaves o estrangulamientos, sentando las bases del boxeo moderno que conocemos hoy en día.</p>
+        <!-- PÁGINA 2: Era Dorada -->
+        <div class="tab-content">
+            <div class="card">
+                <h2>Página 2: La Revolución de las Reglas de Queensberry y la Era Dorada</h2>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Guantes y ring de boxeo">
+                </div>
+                <p>El Nacimiento del Boxeo Moderno (1867). Con la introducción de las reglas de Queensberry, se estableció el uso obligatorio de guantes acolchados, el límite de 3 minutos por asalto y la prohibición de llaves, transformando el deporte violento de bare-knuckle en un deporte atlético y reglamentado.</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>Galería de Leyendas del Ring</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Entrenamiento de Boxeo">
-                    <h3>Disciplina y Entrenamiento</h3>
-                    <p>La preparación física y mental es la clave fundamental para cualquier boxeador profesional en la búsqueda de la gloria.</p>
+        <!-- PÁGINA 3: Leyendas -->
+        <div class="tab-content">
+            <div class="card">
+                <h2>Página 3: Las Máximas Leyendas del Ring</h2>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Leyendas del boxeo">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Guantes de Boxeo">
-                    <h3>Equipamiento Clásico</h3>
-                    <p>Los guantes y vendas protegen las manos de los atletas y permiten combates más seguros y dinámicos.</p>
+                <p>A lo largo de las décadas, figuras históricas han trascendido el deporte gracias a su técnica inigualable, carisma y valentía bajo los reflectores del cuadrilátero, convirtiéndose en íconos culturales mundiales.</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA 4: Reglas -->
+        <div class="tab-content">
+            <div class="card">
+                <h2>Página 4: Reglamentación y Categorías Actuales</h2>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Ring de boxeo moderno">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="El Cuadrilátero">
-                    <h3>El Cuadrilátero</h3>
-                    <p>El escenario sagrado donde las leyendas del boxeo mundial han dejado su legado histórico a lo largo de las décadas.</p>
-                </div>
+                <p>El boxeo profesional moderno se divide en estrictas categorías de peso y cuenta con jueces y réferis capacitados para velar por la integridad física de los contendientes en cada asalto.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Sitio Oficial de Boxeo. Creado con pasión por el deporte.</p>
+        <p>&copy; 2026 El Rincón del Boxeo. Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        function switchTab(index) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add('active');
+                    contents[i].classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                    contents[i].classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
+
