@@ -30,7 +30,6 @@
             font-size: 2.2rem;
             margin: 0.5rem 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         header p {
             color: var(--text-dim);
@@ -45,8 +44,6 @@
             gap: 10px;
             border-bottom: 2px solid var(--accent);
             white-space: nowrap;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent) #181818;
         }
         .nav-tabs button {
             background: #2a2a2a;
@@ -74,11 +71,6 @@
         }
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         .card {
             background-color: var(--card-bg);
@@ -95,18 +87,16 @@
             border-bottom: 1px solid #333;
             padding-bottom: 0.5rem;
         }
+        h3 {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
         p {
             line-height: 1.7;
             color: var(--text-dim);
             font-size: 1.05rem;
-        }
-        ul {
-            color: var(--text-dim);
-            line-height: 1.6;
-            margin-top: 0.5rem;
-        }
-        ul li strong {
-            color: var(--text);
         }
         .img-container {
             width: 100%;
@@ -117,15 +107,14 @@
         }
         .img-container img {
             width: 100%;
-            height: 260px;
+            height: 240px;
             object-fit: cover;
             border-radius: 8px;
         }
-        /* Tabla de Precios */
         .price-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             background: #222;
             border-radius: 6px;
             overflow: hidden;
@@ -144,9 +133,6 @@
         .price-table td {
             color: var(--text-dim);
         }
-        .price-table tr:hover {
-            background-color: #2a2a2a;
-        }
         footer {
             text-align: center;
             padding: 2.5rem;
@@ -162,7 +148,7 @@
     <header>
         <span style="font-size: 2.5rem;">🥊</span>
         <h1>El Rincón del Boxeo</h1>
-        <p>Un recorrido histórico, técnico y cultural por el deporte de los puños</p>
+        <p>Enciclopedia Interactiva del Deporte de los Puños</p>
     </header>
 
     <!-- Menú de las 7 pestañas -->
@@ -181,89 +167,134 @@
         <!-- APARTADO 1 -->
         <div class="tab-content active">
             <div class="card">
-                <h2>Apartado 1: Los Orígenes Ancestrales del Pugilato</h2>
+                <h2>Apartado 1: Los Orígenes Ancestrales</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Antigua Grecia y Orígenes">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Origenes">
                 </div>
-                <p>El boxeo es una de las disciplinas de combate más antiguas de la humanidad. Sus primeros vestigios documentados se remontan a las civilizaciones de Sumeria y el Antiguo Egipto, donde los enfrentamientos formaban parte de rituales y festividades guerreras.</p>
-                <p>Posteriormente, en la Antigua Grecia, el pugilato fue formalmente adoptado e integrado en los Juegos Olímpicos Antiguos en el año 688 a. C. En aquel entonces, los competidores no usaban guantes protectores, sino largas correas de cuero blando (llamadas <em>himantes</em>) en sus manos y nudillos para asegurar los huesos, librando combates sin límite de tiempo hasta que uno de los contendientes se rendía o quedaba incapacitado.</p>
+                
+                <h3>1. Las primeras civilizaciones y Sumeria</h3>
+                <p>El combate con los puños es tan antiguo como la civilización misma. Los hallazgos arqueológicos más remotos en Sumeria y el Antiguo Egipto muestran bajorrelieves donde hombres se enfrentan con los puños cerrados en festividades sagradas y rituales de honor.</p>
+                
+                <h3>2. El pugilato en la Antigua Grecia</h3>
+                <p>En Grecia, el deporte evolucionó formalmente y fue incorporado a los Juegos Olímpicos Antiguos en el año 688 a. C. Los atletas competían bajo el sol con correas de cuero blando llamadas himantes que envolvían sus manos para proteger los huesos.</p>
+                
+                <h3>3. La transición hacia el Imperio Romano</h3>
+                <p>Los romanos adoptaron la disciplina, pero modificaron drásticamente su naturaleza añadiendo tachuelas de metal a las correas de cuero (los caestus), convirtiendo los enfrentamientos en espectáculos sangrientos de supervivencia en el coliseo.</p>
             </div>
         </div>
 
         <!-- APARTADO 2 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Apartado 2: La Revolución del Boxeo Moderno y la Era Dorada</h2>
+                <h2>Apartado 2: La Era Dorada y el Boxeo Moderno</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Reglas de Queensberry">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Era Dorada">
                 </div>
-                <p>Durante el siglo XIX, el deporte sufrió una transformación radical para dejar atrás la brutalidad de las peleas callejeras sin guantes (*bare-knuckle*). En 1867 se publicaron las famosas **Reglas de Queensberry**, patrocinadas por el marqués de Queensberry.</p>
-                <p>Estas nuevas reglas establecieron normativas que cambiaron para siempre la historia del deporte: el uso obligatorio de guantes acolchados, la división de la pelea en asaltos de 3 minutos con un minuto de descanso entre ellos, la prohibición de las llaves o estrangulamientos, y el conteo de 10 segundos para un boxeador derribado. Esto dio inicio a la apasionante Era Dorada del boxeo moderno.</p>
+                
+                <h3>1. El fin del Bare-Knuckle en el siglo XIX</h3>
+                <p>Durante siglos las peleas se realizaban sin guantes y sin reglas fijas. A mitad del siglo XIX la sociedad exigió un cambio para convertir la brutalidad callejera en una disciplina atlética y respetable.</p>
+                
+                <h3>2. La instauración de las Reglas de Queensberry</h3>
+                <p>En 1867 se publicaron las reglas patrocinadas por el marqués de Queensberry. Estas establecieron asaltos de 3 minutos, el uso obligatorio de guantes acolchados y la prohibición de llaves o derribos.</p>
+                
+                <h3>3. El nacimiento de los grandes íconos mediáticos</h3>
+                <p>Con las nuevas reglas, el boxeo saltó a los grandes escenarios de Londres y Nueva York, atrayendo multitudes masivas y comenzando la legendaria era de los campeones mundiales de peso pesado.</p>
             </div>
         </div>
 
         <!-- APARTADO 3 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Apartado 3: Galería de Leyendas Inmortales</h2>
+                <h2>Apartado 3: Galería de Leyendas del Ring</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Leyendas del ring">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Leyendas">
                 </div>
-                <p>A lo largo de los siglos XX y XXI, el cuadrilátero ha visto nacer a atletas extraordinarios cuyas hazañas trascendieron las páginas deportivas para convertirse en auténticos mitos de la cultura popular.</p>
-                <p>Desde la elegancia y pegada devastadora de pesos pesados como Muhammad Ali, Joe Frazier y Mike Tyson, hasta los guerreros mexicanos y latinoamericanos que han llenado de gloria las carteleras mundiales con valentía, corazón y una técnica depurada. Cada leyenda dejó un estilo único que sigue inspirando a las nuevas generaciones.</p>
+                
+                <h3>1. Muhammad Ali: El más grande de la historia</h3>
+                <p>Conocido por su velocidad supersónica, su estilo inigualable de "flotar como mariposa y picar como abeja" y su activismo social, revolucionó el deporte y trascendió fronteras culturales.</p>
+                
+                <h3>2. La época dorada de los pesos pesados</h3>
+                <p>Una década inolvidable marcada por rivalidades colosales e históricas entre leyendas de la talla de Joe Frazier, George Foreman y el implacable pegador Mike Tyson.</p>
+                
+                <h3>3. El legado de los guerreros latinoamericanos</h3>
+                <p>México y América Latina han aportado campeones legendarios caracterizados por su valentía, entrega inquebrantable y un boxeo ofensivo que llena de pasión las carteleras estelares.</p>
             </div>
         </div>
 
         <!-- APARTADO 4 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Apartado 4: Reglamentación, Arbitraje y Categorías</h2>
+                <h2>Apartado 4: Reglamentación y Arbitraje</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80" alt="Árbitros y Jueces en el ring">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80" alt="Reglamento y arbitraje">
                 </div>
-                <p>El boxeo actual es un deporte sumamente regulado por comisiones atléticas internacionales. Sobre el ring, la seguridad de los contendientes recae de manera absoluta en el **réferi**, quien tiene la autoridad de detener el combate si nota que un boxeador ya no puede defenderse con inteligencia.</p>
-                <p>Fuera de las cuerdas, tres jueces laterales se encargan de puntuar cada asalto mediante el sistema de 10 puntos obligatorios. Además, el deporte está estrictamente dividido en múltiples categorías de peso —desde peso mínimo hasta peso pesado— para garantizar combates justos y equilibrados entre atletas de complexiones físicas similares.</p>
+                
+                <h3>1. El rol fundamental del réferi sobre el ring</h3>
+                <p>El réferi es la máxima autoridad en el cuadrilátero. Su responsabilidad primordial es velar por la integridad física de los contendientes, aplicando el reglamento y deteniendo el combate si un atleta corre peligro.</p>
+                
+                <h3>2. El sistema de puntuación de los jueces</h3>
+                <p>Tres jueces ubicados fuera del ring evalúan cada asalto de manera independiente utilizando el sistema de 10 puntos obligatorios, premiando la agresividad efectiva, la defensa y la técnica.</p>
+                
+                <h3>3. Las estrictas categorías de peso</h3>
+                <p>Para garantizar equidad absoluta, los boxeadores se clasifican en divisiones rigurosas de peso, desde el peso mínimo hasta los pesos pesados ilimitados, supervisados por organismos internacionales.</p>
             </div>
         </div>
 
         <!-- APARTADO 5 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Apartado 5: Equipamiento Esencial para el Atleta</h2>
+                <h2>Apartado 5: Equipamiento Esencial</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&auto=format&fit=crop&q=80" alt="Guantes y vendas de boxeo">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&auto=format&fit=crop&q=80" alt="Equipamiento">
                 </div>
-                <p>Para practicar boxeo de forma segura y profesional, se requiere indumentaria especializada que proteja tanto las manos del atacante como la integridad del oponente:</p>
-                <ul>
-                    <li><strong>Guantes de boxeo:</strong> Varían en onzas (desde 8 oz para peleas profesionales hasta 16 oz para entrenamientos y sparring).</li>
-                    <li><strong>Vendas y protector bucal:</strong> Fundamentales para evitar fracturas en los nudillos, muñecas y proteger la mandíbula y los dientes.</li>
-                    <li><strong>Careta y coquilla:</strong> Equipo de protección indispensable durante las sesiones de entrenamiento intenso y sparring.</li>
-                    <li><strong>Calzado de boxeo:</strong> Botines ligeros con suela adherente que brindan estabilidad en los desplazamientos rápidos sobre la lona.</li>
-                </ul>
+                
+                <h3>1. Guantes de boxeo y su gramaje</h3>
+                <p>Los guantes amortiguan el impacto. Se usan de 8 a 10 onzas para combates profesionales oficiales, y de 14 a 16 onzas para entrenamientos diarios y sesiones de sparring con el fin de proteger las manos.</p>
+                
+                <h3>2. Vendas de protección y bucal</h3>
+                <p>Las vendas de gasa y algodón son obligatorias para fijar las articulaciones de los nudillos y muñecas. El protector bucal previene conmociones cerebrales y protege la dentadura ante impactos directos.</p>
+                
+                <h3>3. Calzado y vestimenta reglamentaria</h3>
+                <p>Los botines de boxeo están diseñados con suelas de goma especializadas que ofrecen máxima tracción y agarre en la lona, permitiendo giros rápidos y desplazamientos explosivos.</p>
             </div>
         </div>
 
         <!-- APARTADO 6 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Apartado 6: Disciplina, Preparación Física y Acondicionamiento</h2>
+                <h2>Apartado 6: Disciplina y Preparación Física</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Entrenamiento y saco de boxeo">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Entrenamiento">
                 </div>
-                <p>El éxito de un boxeador no se decide únicamente la noche de la pelea, sino en los meses previos de un campamento de entrenamiento exhaustivo. La disciplina física y mental requerida es de las más severas en el deporte profesional.</p>
-                <p>La rutina diaria de un peleador incluye kilómetros de carrera matutina, sesiones intensas de salto de cuerda para desarrollar coordinación y ritmo, práctica con la pera loca y la bolsa pesada para mejorar la potencia de impacto, y rounds de *sparring* técnico para simular situaciones reales de combate bajo la supervisión estricta de su entrenador.</p>
+                
+                <h3>1. Acondicionamiento cardiovascular extremo</h3>
+                <p>El boxeo exige una condición física privilegiada. Los atletas realizan carreras matutinas de larga distancia y rutinas intensas de salto de cuerda para adquirir resistencia pulmonar y agilidad de pies.</p>
+                
+                <h3>2. Trabajo técnico en saco y manoplas</h3>
+                <p>El golpeo constante a la bolsa pesada y a la pera loca desarrolla la potencia muscular, la precisión milimétrica y los reflejos visuales necesarios para conectar combinaciones certeras.</p>
+                
+                <h3>3. Las sesiones tácticas de Sparring</h3>
+                <p>Bajo la supervisión estricta del entrenador, el peleador practica con compañeros en condiciones reales de combate para ensayar defensas, contragolpes y manejo de la distancia.</p>
             </div>
         </div>
 
         <!-- APARTADO 7 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Apartado 7: Precios de Equipamiento y Acceso a Veladas</h2>
+                <h2>Apartado 7: Costos y Precios del Deporte</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Veladas de boxeo y equipamiento">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Precios">
                 </div>
-                <p>A continuación se detallan los costos promedio en el mercado del equipamiento oficial de boxeo, así como las tarifas estimadas para asistir a eventos o funciones de exhibición:</p>
                 
+                <h3>1. Inversión en equipamiento básico para entrenar</h3>
+                <p>Para iniciar en el boxeo de manera segura se requiere adquirir artículos fundamentales cuyo costo varía según la calidad y la marca seleccionada en tiendas especializadas.</p>
+                
+                <h3>2. Costos de implementos avanzados de gimnasio</h3>
+                <p>Los accesorios para acondicionamiento en casa o gimnasio privado, como los costales de boxeo profesionales, implican una inversión mayor para asegurar durabilidad ante impactos fuertes.</p>
+                
+                <h3>3. Tarifas de acceso a funciones y veladas</h3>
+                <p>Asistir a presenciar espectáculos de boxeo profesional tiene precios sumamente variados dependiendo de la magnitud del evento deportivo y la cercanía de los asientos al cuadrilátero.</p>
+
                 <table class="price-table">
                     <thead>
                         <tr>
@@ -290,17 +321,17 @@
                         </tr>
                         <tr>
                             <td><strong>Saco de Boxeo Colgante</strong></td>
-                            <td>Saco relleno profesional (resistente)</td>
+                            <td>Saco relleno profesional resistente</td>
                             <td>$90 - $180 USD</td>
                         </tr>
                         <tr>
                             <td><strong>Boletos Velada Local</strong></td>
-                            <td>Entrada general a funciones amateur/estatales</td>
+                            <td>Entrada general a funciones estatales</td>
                             <td>$10 - $25 USD</td>
                         </tr>
                         <tr>
                             <td><strong>Boletos Campeonato Mundial</strong></td>
-                            <td>Asientos preferenciales en arena de campeonato</td>
+                            <td>Asientos preferenciales en arena estelar</td>
                             <td>$150 - $1,000+ USD</td>
                         </tr>
                     </tbody>
@@ -311,7 +342,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 El Rincón del Boxeo. Creado con pasión por el deporte.</p>
+        <p>&copy; 2026 El Rincón del Boxeo. Todos los derechos reservados.</p>
     </footer>
 
     <script>
@@ -332,5 +363,4 @@
     </script>
 </body>
 </html>
-
 
