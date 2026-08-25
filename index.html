@@ -31,7 +31,6 @@
             margin: 0.5rem 0;
             text-transform: uppercase;
         }
-        /* Menú de pestañas horizontal */
         .nav-tabs {
             display: flex;
             overflow-x: auto;
@@ -45,7 +44,7 @@
             background: #2a2a2a;
             color: var(--text-dim);
             border: none;
-            padding: 10px 18px;
+            padding: 10px 16px;
             border-radius: 6px;
             font-size: 0.95rem;
             font-weight: bold;
@@ -77,7 +76,7 @@
         }
         h2 {
             color: var(--accent);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-top: 0;
         }
         p {
@@ -111,56 +110,92 @@
         <h1>El Rincón del Boxeo</h1>
     </header>
 
-    <!-- Menú de Pestañas -->
+    <!-- Menú de las 7 pestañas -->
     <div class="nav-tabs">
         <button class="tab-btn active" onclick="switchTab(0)">1. Orígenes</button>
         <button class="tab-btn" onclick="switchTab(1)">2. Era Dorada</button>
         <button class="tab-btn" onclick="switchTab(2)">3. Leyendas</button>
         <button class="tab-btn" onclick="switchTab(3)">4. Reglas</button>
+        <button class="tab-btn" onclick="switchTab(4)">5. Equipamiento</button>
+        <button class="tab-btn" onclick="switchTab(5)">6. Entrenamientos</button>
+        <button class="tab-btn" onclick="switchTab(6)">7. El Ring</button>
     </div>
 
     <div class="container">
-        <!-- PÁGINA 1: Orígenes -->
+        <!-- PÁGINA 1 -->
         <div class="tab-content active">
             <div class="card">
-                <h2>Página 1: Los Orígenes Ancestrales del Boxeo</h2>
+                <h2>Página 1: Los Orígenes Ancestrales</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Orígenes del boxeo">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Orígenes">
                 </div>
-                <p>El combate con los puños tiene registros que datan de las civilizaciones antiguas de Sumeria y el Antiguo Egipto. En la antigua Grecia, el pugilato fue formalmente introducido en los Juegos Olímpicos en el año 688 a. C., donde los atletas utilizaban correas de cuero blando en las manos para protegerse.</p>
+                <p>El combate con los puños tiene registros en civilizaciones antiguas como Sumeria y el Antiguo Egipto. En Grecia fue introducido en los Juegos Olímpicos en el 688 a. C.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 2: Era Dorada -->
+        <!-- PÁGINA 2 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 2: La Revolución de las Reglas de Queensberry y la Era Dorada</h2>
+                <h2>Página 2: La Revolución de las Reglas de Queensberry</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Guantes y ring de boxeo">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Reglas">
                 </div>
-                <p>El Nacimiento del Boxeo Moderno (1867). Con la introducción de las reglas de Queensberry, se estableció el uso obligatorio de guantes acolchados, el límite de 3 minutos por asalto y la prohibición de llaves, transformando el deporte violento de bare-knuckle en un deporte atlético y reglamentado.</p>
+                <p>En el siglo XIX el deporte se transformó radicalmente con la introducción de guantes obligatorios y asaltos limitados a 3 minutos.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 3: Leyendas -->
+        <!-- PÁGINA 3 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 3: Las Máximas Leyendas del Ring</h2>
+                <h2>Página 3: Galería de Leyendas del Ring</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Leyendas del boxeo">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Leyendas">
                 </div>
-                <p>A lo largo de las décadas, figuras históricas han trascendido el deporte gracias a su técnica inigualable, carisma y valentía bajo los reflectores del cuadrilátero, convirtiéndose en íconos culturales mundiales.</p>
+                <p>Los grandes íconos mundiales que han dejado un legado histórico imborrable a lo largo de las décadas bajo los reflectores.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 4: Reglas -->
+        <!-- PÁGINA 4 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 4: Reglamentación y Categorías Actuales</h2>
+                <h2>Página 4: Reglamentación y Arbitraje</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Ring de boxeo moderno">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Arbitraje">
                 </div>
-                <p>El boxeo profesional moderno se divide en estrictas categorías de peso y cuenta con jueces y réferis capacitados para velar por la integridad física de los contendientes en cada asalto.</p>
+                <p>El papel fundamental del réferi y los jueces laterales para garantizar combates limpios, seguros y con puntuaciones justas.</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA 5 -->
+        <div class="tab-content">
+            <div class="card">
+                <h2>Página 5: Equipamiento Clásico y Moderno</h2>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80" alt="Equipamiento">
+                </div>
+                <p>Los guantes, vendas protectores, bucales y calzado especializado diseñados para amortiguar impactos y cuidar la integridad del atleta.</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA 6 -->
+        <div class="tab-content">
+            <div class="card">
+                <h2>Página 6: Disciplina y Preparación Física</h2>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Entrenamiento">
+                </div>
+                <p>La dureza del entrenamiento diario: salto de cuerda, sparring, trabajo en bolsa pesada y una resistencia cardiovascular extrema.</p>
+            </div>
+        </div>
+
+        <!-- PÁGINA 7 -->
+        <div class="tab-content">
+            <div class="card">
+                <h2>Página 7: El Cuadrilátero Sagrado</h2>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="El Ring">
+                </div>
+                <p>La estructura del ring, las esquinas neutrales y el ambiente eléctrico que se vive en las grandes veladas de campeonato mundial.</p>
             </div>
         </div>
     </div>
@@ -187,4 +222,5 @@
     </script>
 </body>
 </html>
+
 
