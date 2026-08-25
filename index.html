@@ -21,30 +21,38 @@
         }
         header {
             text-align: center;
-            padding: 2rem 1rem 1rem;
+            padding: 2.5rem 1rem 1.5rem;
             background: linear-gradient(180deg, #1f0505 0%, var(--bg) 100%);
             border-bottom: 2px solid var(--accent);
         }
         header h1 {
             color: var(--accent);
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin: 0.5rem 0;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
+        header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+        /* Menú de las 7 pestañas deslizable */
         .nav-tabs {
             display: flex;
             overflow-x: auto;
             background: #181818;
-            padding: 10px;
+            padding: 12px;
             gap: 10px;
             border-bottom: 2px solid var(--accent);
             white-space: nowrap;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) #181818;
         }
         .nav-tabs button {
             background: #2a2a2a;
             color: var(--text-dim);
             border: none;
-            padding: 10px 16px;
+            padding: 10px 18px;
             border-radius: 6px;
             font-size: 0.95rem;
             font-weight: bold;
@@ -54,10 +62,11 @@
         .nav-tabs button.active {
             background: var(--accent);
             color: white;
+            box-shadow: 0 0 10px rgba(255, 59, 59, 0.4);
         }
         .container {
-            max-width: 800px;
-            margin: 1.5rem auto;
+            max-width: 850px;
+            margin: 2rem auto;
             padding: 0 1rem;
         }
         .tab-content {
@@ -65,49 +74,95 @@
         }
         .tab-content.active {
             display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .card {
             background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 2rem;
             margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
         }
         h2 {
             color: var(--accent);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
         }
         p {
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text-dim);
+            font-size: 1.05rem;
+        }
+        ul {
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+        ul li strong {
+            color: var(--text);
         }
         .img-container {
             width: 100%;
-            margin: 1rem 0;
-            border-radius: 6px;
+            margin: 1.2rem 0;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
         .img-container img {
             width: 100%;
-            height: 220px;
+            height: 260px;
             object-fit: cover;
+            border-radius: 8px;
+        }
+        /* Tabla de Precios */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background: #222;
             border-radius: 6px;
+            overflow: hidden;
+        }
+        .price-table th, .price-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        .price-table th {
+            background-color: #2c0b0b;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .price-table td {
+            color: var(--text-dim);
+        }
+        .price-table tr:hover {
+            background-color: #2a2a2a;
         }
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             color: #666;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            margin-top: 3rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <span style="font-size: 2rem;">🥊</span>
+        <span style="font-size: 2.5rem;">🥊</span>
         <h1>El Rincón del Boxeo</h1>
+        <p>Un recorrido histórico, técnico y cultural por el deporte de los puños</p>
     </header>
 
     <!-- Menú de las 7 pestañas -->
@@ -116,92 +171,147 @@
         <button class="tab-btn" onclick="switchTab(1)">2. Era Dorada</button>
         <button class="tab-btn" onclick="switchTab(2)">3. Leyendas</button>
         <button class="tab-btn" onclick="switchTab(3)">4. Reglas</button>
-        <button class="tab-btn" onclick="switchTab(4)">5. Equipamiento</button>
-        <button class="tab-btn" onclick="switchTab(5)">6. Entrenamientos</button>
-        <button class="tab-btn" onclick="switchTab(6)">7. El Ring</button>
+        <button class="tab-btn" onclick="switchTab(4)">5. Equipo</button>
+        <button class="tab-btn" onclick="switchTab(5)">6. Entrenamiento</button>
+        <button class="tab-btn" onclick="switchTab(6)">7. Precios</button>
     </div>
 
     <div class="container">
-        <!-- PÁGINA 1 -->
+        
+        <!-- APARTADO 1 -->
         <div class="tab-content active">
             <div class="card">
-                <h2>Página 1: Los Orígenes Ancestrales</h2>
+                <h2>Apartado 1: Los Orígenes Ancestrales del Pugilato</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Orígenes">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Antigua Grecia y Orígenes">
                 </div>
-                <p>El combate con los puños tiene registros en civilizaciones antiguas como Sumeria y el Antiguo Egipto. En Grecia fue introducido en los Juegos Olímpicos en el 688 a. C.</p>
+                <p>El boxeo es una de las disciplinas de combate más antiguas de la humanidad. Sus primeros vestigios documentados se remontan a las civilizaciones de Sumeria y el Antiguo Egipto, donde los enfrentamientos formaban parte de rituales y festividades guerreras.</p>
+                <p>Posteriormente, en la Antigua Grecia, el pugilato fue formalmente adoptado e integrado en los Juegos Olímpicos Antiguos en el año 688 a. C. En aquel entonces, los competidores no usaban guantes protectores, sino largas correas de cuero blando (llamadas <em>himantes</em>) en sus manos y nudillos para asegurar los huesos, librando combates sin límite de tiempo hasta que uno de los contendientes se rendía o quedaba incapacitado.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 2 -->
+        <!-- APARTADO 2 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 2: La Revolución de las Reglas de Queensberry</h2>
+                <h2>Apartado 2: La Revolución del Boxeo Moderno y la Era Dorada</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Reglas">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Reglas de Queensberry">
                 </div>
-                <p>En el siglo XIX el deporte se transformó radicalmente con la introducción de guantes obligatorios y asaltos limitados a 3 minutos.</p>
+                <p>Durante el siglo XIX, el deporte sufrió una transformación radical para dejar atrás la brutalidad de las peleas callejeras sin guantes (*bare-knuckle*). En 1867 se publicaron las famosas **Reglas de Queensberry**, patrocinadas por el marqués de Queensberry.</p>
+                <p>Estas nuevas reglas establecieron normativas que cambiaron para siempre la historia del deporte: el uso obligatorio de guantes acolchados, la división de la pelea en asaltos de 3 minutos con un minuto de descanso entre ellos, la prohibición de las llaves o estrangulamientos, y el conteo de 10 segundos para un boxeador derribado. Esto dio inicio a la apasionante Era Dorada del boxeo moderno.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 3 -->
+        <!-- APARTADO 3 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 3: Galería de Leyendas del Ring</h2>
+                <h2>Apartado 3: Galería de Leyendas Inmortales</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Leyendas">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Leyendas del ring">
                 </div>
-                <p>Los grandes íconos mundiales que han dejado un legado histórico imborrable a lo largo de las décadas bajo los reflectores.</p>
+                <p>A lo largo de los siglos XX y XXI, el cuadrilátero ha visto nacer a atletas extraordinarios cuyas hazañas trascendieron las páginas deportivas para convertirse en auténticos mitos de la cultura popular.</p>
+                <p>Desde la elegancia y pegada devastadora de pesos pesados como Muhammad Ali, Joe Frazier y Mike Tyson, hasta los guerreros mexicanos y latinoamericanos que han llenado de gloria las carteleras mundiales con valentía, corazón y una técnica depurada. Cada leyenda dejó un estilo único que sigue inspirando a las nuevas generaciones.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 4 -->
+        <!-- APARTADO 4 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 4: Reglamentación y Arbitraje</h2>
+                <h2>Apartado 4: Reglamentación, Arbitraje y Categorías</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Arbitraje">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80" alt="Árbitros y Jueces en el ring">
                 </div>
-                <p>El papel fundamental del réferi y los jueces laterales para garantizar combates limpios, seguros y con puntuaciones justas.</p>
+                <p>El boxeo actual es un deporte sumamente regulado por comisiones atléticas internacionales. Sobre el ring, la seguridad de los contendientes recae de manera absoluta en el **réferi**, quien tiene la autoridad de detener el combate si nota que un boxeador ya no puede defenderse con inteligencia.</p>
+                <p>Fuera de las cuerdas, tres jueces laterales se encargan de puntuar cada asalto mediante el sistema de 10 puntos obligatorios. Además, el deporte está estrictamente dividido en múltiples categorías de peso —desde peso mínimo hasta peso pesado— para garantizar combates justos y equilibrados entre atletas de complexiones físicas similares.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 5 -->
+        <!-- APARTADO 5 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 5: Equipamiento Clásico y Moderno</h2>
+                <h2>Apartado 5: Equipamiento Esencial para el Atleta</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&auto=format&fit=crop&q=80" alt="Equipamiento">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&auto=format&fit=crop&q=80" alt="Guantes y vendas de boxeo">
                 </div>
-                <p>Los guantes, vendas protectores, bucales y calzado especializado diseñados para amortiguar impactos y cuidar la integridad del atleta.</p>
+                <p>Para practicar boxeo de forma segura y profesional, se requiere indumentaria especializada que proteja tanto las manos del atacante como la integridad del oponente:</p>
+                <ul>
+                    <li><strong>Guantes de boxeo:</strong> Varían en onzas (desde 8 oz para peleas profesionales hasta 16 oz para entrenamientos y sparring).</li>
+                    <li><strong>Vendas y protector bucal:</strong> Fundamentales para evitar fracturas en los nudillos, muñecas y proteger la mandíbula y los dientes.</li>
+                    <li><strong>Careta y coquilla:</strong> Equipo de protección indispensable durante las sesiones de entrenamiento intenso y sparring.</li>
+                    <li><strong>Calzado de boxeo:</strong> Botines ligeros con suela adherente que brindan estabilidad en los desplazamientos rápidos sobre la lona.</li>
+                </ul>
             </div>
         </div>
 
-        <!-- PÁGINA 6 -->
+        <!-- APARTADO 6 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 6: Disciplina y Preparación Física</h2>
+                <h2>Apartado 6: Disciplina, Preparación Física y Acondicionamiento</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Entrenamiento">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Entrenamiento y saco de boxeo">
                 </div>
-                <p>La dureza del entrenamiento diario: salto de cuerda, sparring, trabajo en bolsa pesada y una resistencia cardiovascular extrema.</p>
+                <p>El éxito de un boxeador no se decide únicamente la noche de la pelea, sino en los meses previos de un campamento de entrenamiento exhaustivo. La disciplina física y mental requerida es de las más severas en el deporte profesional.</p>
+                <p>La rutina diaria de un peleador incluye kilómetros de carrera matutina, sesiones intensas de salto de cuerda para desarrollar coordinación y ritmo, práctica con la pera loca y la bolsa pesada para mejorar la potencia de impacto, y rounds de *sparring* técnico para simular situaciones reales de combate bajo la supervisión estricta de su entrenador.</p>
             </div>
         </div>
 
-        <!-- PÁGINA 7 -->
+        <!-- APARTADO 7 -->
         <div class="tab-content">
             <div class="card">
-                <h2>Página 7: El Cuadrilátero Sagrado</h2>
+                <h2>Apartado 7: Precios de Equipamiento y Acceso a Veladas</h2>
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="El Ring">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="Veladas de boxeo y equipamiento">
                 </div>
-                <p>La estructura del ring, las esquinas neutrales y el ambiente eléctrico que se vive en las grandes veladas de campeonato mundial.</p>
+                <p>A continuación se detallan los costos promedio en el mercado del equipamiento oficial de boxeo, así como las tarifas estimadas para asistir a eventos o funciones de exhibición:</p>
+                
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Concepto / Artículo</th>
+                            <th>Descripción</th>
+                            <th>Precio Estimado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Guantes de Entrenamiento</strong></td>
+                            <td>Gama media (piel sintética / 14-16 oz)</td>
+                            <td>$45 - $80 USD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guantes Profesionales</strong></td>
+                            <td>Piel de alta calidad (8-10 oz)</td>
+                            <td>$120 - $250+ USD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vendas y Protector Bucal</strong></td>
+                            <td>Kit básico de protección personal</td>
+                            <td>$15 - $30 USD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Saco de Boxeo Colgante</strong></td>
+                            <td>Saco relleno profesional (resistente)</td>
+                            <td>$90 - $180 USD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Boletos Velada Local</strong></td>
+                            <td>Entrada general a funciones amateur/estatales</td>
+                            <td>$10 - $25 USD</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Boletos Campeonato Mundial</strong></td>
+                            <td>Asientos preferenciales en arena de campeonato</td>
+                            <td>$150 - $1,000+ USD</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 El Rincón del Boxeo. Todos los derechos reservados.</p>
+        <p>&copy; 2026 El Rincón del Boxeo. Creado con pasión por el deporte.</p>
     </footer>
 
     <script>
