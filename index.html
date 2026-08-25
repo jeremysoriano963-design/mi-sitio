@@ -3,19 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camino Hacia el Boxeo</title>
+    <title>Historia del Boxeo | Mi Sitio</title>
+    <style>
+        :root {
+            --primary: #8b0000;
+            --secondary: #1a1a1a;
+            --accent: #d4af37;
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #f5f5f5;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 4px solid var(--accent);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-left: 5px solid var(--accent);
+        }
+        h2 {
+            color: var(--accent);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .gallery-item {
+            background: #2a2a2a;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .gallery-item h3 {
+            margin: 1rem 0 0.5rem;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        .gallery-item p {
+            font-size: 0.9rem;
+            color: #bbb;
+            padding: 0 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--secondary);
+            color: #888;
+            border-top: 1px solid #333;
+            margin-top: 4rem;
+        }
+    </style>
 </head>
 <body>
-    <div class="contenido">
-        <h1>Camino Hacia el Boxeo</h1>
-        <p>Los orígenes del boxeo se remontan a la antigüedad, donde las luchas sin armas formaban parte de rituales y entrenamientos para los combates; los enfrentamientos continuaban ininterrumpidamente hasta que uno de los dos contendientes admitía su derrota levantando el dedo índice o quedaba incapacitado físicamente.</p>
-        
-        <div class="dato-curioso">
-            <h3>💡 Dato Histórico Clave: La Evolución de las Protecciones</h3>
-            <p>Los combatientes griegos utilizaban unas correas de cuero blando llamadas <em>himantes</em> para protegerse las muñecas y los nudillos sin restar fuerza de impacto. Con el paso de los siglos, el Imperio Romano endureció estas correas e incorporó inserciones metálicas y clavos de plomo, convirtiendo los combates en espectáculos sumamente sangrientos dentro del Anfiteatro.</p>
+
+    <header>
+        <h1>Boxeo: Historia y Leyendas</h1>
+        <p>Un recorrido por el deporte de los puños</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Orígenes del Boxeo</h2>
+            <p>El boxeo tiene sus raíces en la antigüedad, encontrándose registros de combates de puños en Sumeria, el Antiguo Egipto y la antigua Grecia, donde fue incorporado a los Juegos Olímpicos Antiguos en el año 688 a. C. A lo largo de los siglos, el deporte ha evolucionado desde combates rudimentarios y sin protección hasta convertirse en una disciplina profesional altamente reglamentada.</p>
+        </div>
+
+        <div class="card">
+            <h2>La Evolución a las Reglas Modernas</h2>
+            <p>En el siglo XIX, el deporte experimentó una transformación radical con la introducción de las <strong>Reglas de Queensberry</strong> en 1867. Estas normas establecieron el uso obligatorio de guantes, la limitación de los asaltos a 3 minutos y la prohibición de las llaves o estrangulamientos, sentando las bases del boxeo moderno que conocemos hoy en día.</p>
+        </div>
+
+        <div class="card">
+            <h2>Galería de Leyendas del Ring</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&auto=format&fit=crop&q=80" alt="Entrenamiento de Boxeo">
+                    <h3>Disciplina y Entrenamiento</h3>
+                    <p>La preparación física y mental es la clave fundamental para cualquier boxeador profesional en la búsqueda de la gloria.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c6232660102?w=600&auto=format&fit=crop&q=80" alt="Guantes de Boxeo">
+                    <h3>Equipamiento Clásico</h3>
+                    <p>Los guantes y vendas protegen las manos de los atletas y permiten combates más seguros y dinámicos.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=600&auto=format&fit=crop&q=80" alt="El Cuadrilátero">
+                    <h3>El Cuadrilátero</h3>
+                    <p>El escenario sagrado donde las leyendas del boxeo mundial han dejado su legado histórico a lo largo de las décadas.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <footer><p>Camino Hacia el Boxeo - Enciclopedia Histórica y Técnica del Boxeo 24/7</p></footer>
+
+    <footer>
+        <p>&copy; 2026 Sitio Oficial de Boxeo. Creado con pasión por el deporte.</p>
+    </footer>
+
 </body>
 </html>
-
